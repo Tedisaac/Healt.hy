@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightblue"
+    android:id="@+id/drawer_layout"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_layout"/>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/slightdarkblue"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu"
+        android:theme="@style/navigationTheme"
+        app:itemIconTint="@color/lightblue"
+        app:itemIconSize="35dp"
+        app:itemTextColor="@color/black"
+        app:itemHorizontalPadding="40dp"
+        app:itemBackground="@drawable/menu_item_padding"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cultured"
+        android:orientation="vertical"
+        android:id="@+id/content_view">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/menu"
+            android:id="@+id/options"
+            android:background="@drawable/gradient_background"
+            app:borderWidth="0dp"
+            android:elevation="5dp"/>
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/options"
+            android:textSize="41sp"
+            android:fontFamily="@font/crazyxeon"
+            android:layout_marginLeft="202dp"
+            android:text="Healt.hy"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="170dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/besideimage">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hey"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/hey"
+        android:textColor="@color/black"
+        android:textSize="50sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="There!"
+            android:textColor="@color/black"
+            android:textSize="50sp"/>
+        </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/besideimage"
+            app:lottie_rawRes="@raw/doctor"
+            android:id="@+id/doctor"/>
+
+
+
+    </RelativeLayout>
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="How may I help you today today?"
+              android:textColor="@color/black"
+              android:textSize="22sp"
+              android:id="@+id/assist"
+              android:layout_marginBottom="20dp"
+              android:layout_marginLeft="15dp"
+              />
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Contact a General Physician"
+              android:textSize="19sp"
+              android:layout_below="@+id/assist"
+              android:textColor="@color/darkblue"
+              android:layout_marginLeft="50dp"
+              android:layout_marginTop="30dp"
+              android:id="@+id/contact_gp"/>
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_toRightOf="@+id/contact_gp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="81dp"
+              android:src="@drawable/ic_baseline_arrow_right_24"/>
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Contact a Consultant"
+              android:layout_below="@+id/contact_gp"
+              android:textSize="19sp"
+              android:layout_marginTop="30dp"
+              android:textColor="@color/darkblue"
+              android:layout_marginLeft="50dp"
+              android:id="@+id/contact_consultant"/>
+          <ImageView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:outlineAmbientShadowColor="@color/black"
+              android:layout_marginTop="137dp"
+              android:layout_toRightOf="@+id/contact_consultant"
+              android:layout_marginLeft="10dp"
+              android:src="@drawable/ic_baseline_arrow_right_24"/>
+
+
+      </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recycler_view"/>
+        </ScrollView>
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

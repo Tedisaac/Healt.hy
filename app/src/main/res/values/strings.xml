@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="appname">Healt.hy</string>
+    <string name="register">Register</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="quote">Healt.hy. Here For You.</string>
+    <string name="verify_txt">Verify</string>
+    <string name="phone_digits">Enter your phone number here.</string>
+    <string name="phone_txt">Get OTP</string>
+    <string name="otp_digits">Enter the OTP we sent you on the given number.</string>
+    <string name="welcome">Welcome.</string>
+    <string name="reg_txt">Register Here.</string>
+    <string name="email">Email</string>
+    <string name="forgot_password">Forgot Password? No Worries.</string>
+    <string name="password">Password</string>
+    <string name="enter_email">Enter Email you use for your Healt.hy account, and we will help you create a new password.</string>
+    <string name="cpassword">Confirm Password</string>
+    <string name="uname">Username</string>
+    <string name="next">Next</string>
+    <string name="show_password">Show Password</string>
+    <string name="profile_txt">User@gmail.com</string>
+    <string name="open">Open</string>
+    <string name="delete">Delete Account</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

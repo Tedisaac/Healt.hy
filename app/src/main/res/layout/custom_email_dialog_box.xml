@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffff"
+        app:cardCornerRadius="20dp">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:text="Reset Link Sent"
+                android:layout_marginLeft="114dp"
+                android:textColor="@color/black"
+                android:id="@+id/reset"/>
+          <com.airbnb.lottie.LottieAnimationView
+              android:layout_width="100dp"
+              android:layout_height="90dp"
+              android:id="@+id/reset_email"
+              app:lottie_rawRes="@raw/emailsent"
+              android:layout_below="@+id/reset"
+              android:layout_centerInParent="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please check your Email"
+                android:id="@+id/please"
+                android:layout_marginTop="8dp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:layout_below="@+id/reset_email"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/actual_email"
+                android:text="ndeited@gmail.com"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="15dp"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:layout_below="@+id/please"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/actual_email"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/blue_border_rounded_cornwe"
+                android:backgroundTint="@color/slightdarkblue"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:text="Close"
+                android:id="@+id/btn_close"
+                android:textColor="@color/black"/>
+
+        </RelativeLayout>
+        
+        
+        
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

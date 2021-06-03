@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:backgroundTint="@color/cultured"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:id="@+id/con_lottie"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="100dp"
+                app:lottie_rawRes="@raw/consultation"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To Contact a Consultant you need to pay a fee"
+                android:id="@+id/please"
+                android:layout_marginTop="8dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:layout_below="@+id/con_lottie"/>
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_below="@+id/con_lottie"
+               android:layout_marginTop="40dp"
+               android:id="@+id/horizon">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/blue_border_rounded_cornwe"
+                android:backgroundTint="@color/slightdarkblue"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="70dp"
+                android:text="DISAGREE"
+                android:id="@+id/btn_disagree"
+                android:textColor="@color/black"/>
+               <Button
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="20dp"
+                   android:background="@drawable/blue_border_rounded_cornwe"
+                   android:backgroundTint="@color/slightdarkblue"
+                   android:layout_centerInParent="true"
+                   android:layout_marginBottom="10dp"
+                   android:layout_marginLeft="40dp"
+                   android:text="AGREE"
+                   android:id="@+id/btn_agree"
+                   android:textColor="@color/black"/>
+           </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

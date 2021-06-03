@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/slightdarkblue"
+        android:src="@drawable/back"
+        android:id="@+id/back_fab_settings"
+        android:elevation="1dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="30dp"
+        android:elevation="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/delete_account_btn"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_account"
+            android:text="@string/delete"
+            android:layout_toRightOf="@+id/del_image"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins_regular"
+            android:maxLines="1"
+            android:textColor="#F42121"
+            android:paddingLeft="17dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginRight="30dp"
+            android:textSize="15sp"
+            android:elevation="5dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/del_image"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_delete_24"
+            app:tint="#851717" />
+    </RelativeLayout>
+</RelativeLayout>
