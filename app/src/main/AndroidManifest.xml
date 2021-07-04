@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/logo_size"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PhoneActivity"></activity>
+        <activity android:name=".GetStartedActivity"></activity>
+        <activity android:name=".SlideActivity" />
+        <activity android:name=".PhoneActivity" />
         <activity android:name=".OtpLoadScreenActivity" />
         <activity android:name=".OtpActicity" />
         <activity android:name=".SplashScreenActivity">

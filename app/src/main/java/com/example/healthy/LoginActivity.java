@@ -7,17 +7,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class LoginActivity extends AppCompatActivity {
 Button signup,signin;
 FloatingActionButton fab3,gfab,pfab;
+LottieAnimationView loginheart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         //getSupportActionBar().hide();
+
+        loginheart = findViewById(R.id.login_heart);
+        loginheart.playAnimation();
+        loginheart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginheart.playAnimation();
+            }
+        });
 
         signin = findViewById(R.id.sign_in);
         signup = findViewById(R.id.sign_up);

@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".LoadScreenActivity">
+    tools:context=".GetStartedActivity">
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerInParent="true"
-        android:id="@+id/otp_loading_circle"
+        android:id="@+id/getting_started_loading_circle"
         app:lottie_rawRes="@raw/pulseloader"/>
 
 </RelativeLayout>

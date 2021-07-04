@@ -24,12 +24,14 @@
              android:elevation="1dp"
              android:layout_marginLeft="18dp"
              android:layout_marginTop="20dp"/>
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/heart"
+        android:id="@+id/login_heart"
+        app:lottie_rawRes="@raw/loginheart"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="20dp"
         />
     <TextView
         android:layout_width="wrap_content"

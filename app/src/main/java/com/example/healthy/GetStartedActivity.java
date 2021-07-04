@@ -8,23 +8,23 @@ import android.os.Handler;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-public class SplashScreenActivity extends AppCompatActivity {
-LottieAnimationView pump;
+public class GetStartedActivity extends AppCompatActivity {
+LottieAnimationView pulse;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_get_started);
 
-        pump = findViewById(R.id.pumping_heart);
-        pump.playAnimation();
+        pulse = findViewById(R.id.getting_started_loading_circle);
+        pulse.playAnimation();
 
-        Handler handler =  new Handler();
+        Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreenActivity.this,SlideActivity.class));
+                startActivity(new Intent(GetStartedActivity.this,LoginActivity.class));
                 finish();
             }
-        }, 3000);
+        },3000);
     }
 }
