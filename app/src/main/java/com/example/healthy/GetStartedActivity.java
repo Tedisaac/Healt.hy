@@ -25,6 +25,6 @@ LottieAnimationView pulse;
                 startActivity(new Intent(GetStartedActivity.this,LoginActivity.class));
                 finish();
             }
-        },3000);
+        },1000);
     }
 }

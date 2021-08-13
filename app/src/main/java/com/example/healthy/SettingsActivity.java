@@ -12,7 +12,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class SettingsActivity extends AppCompatActivity {
     FloatingActionButton settingsfab;
-    Button delete;
+    Button delete,change_profile;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,15 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SettingsActivity.this, "Account Deleted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        change_profile = findViewById(R.id.change_profile);
+        change_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SettingsActivity.this,ChangeProfileActivity.class));
+                finish();
             }
         });
     }

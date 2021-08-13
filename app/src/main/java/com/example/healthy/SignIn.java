@@ -1,5 +1,6 @@
 package com.example.healthy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -18,7 +19,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.regex.Pattern;
 
@@ -28,6 +33,8 @@ public class SignIn extends AppCompatActivity {
     CheckBox checkBox;
     Button signin2;
     TextView forgotpassword;
+
+    private FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -41,6 +48,8 @@ public class SignIn extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         //getSupportActionBar().hide();
+        firebaseAuth = FirebaseAuth.getInstance();
+
 
         fab2 = findViewById(R.id.back2_fab);
         fab2.setOnClickListener(new View.OnClickListener() {
@@ -71,15 +80,28 @@ public class SignIn extends AppCompatActivity {
                 String password_string = password11.getText().toString().trim();
                 if (email_string.length() == 0){
                     email.setError("Input Field required");
-                }else if (!Patterns.EMAIL_ADDRESS.matcher(email_string).matches()){
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email_string).matches()){
                     email.setError("Input a valid email");
-                } else if (password_string.length() == 0){
+                }
+                if (password_string.length() == 0){
                     password11.setError("Input Field required");
-                } else {
-                    Toast.makeText(SignIn.this, "Successful", Toast.LENGTH_SHORT).show();
+                }
+                if (!(email_string.isEmpty()) && !(password_string.isEmpty()))
+                {
+                    firebaseAuth.signInWithEmailAndPassword(email_string, password_string)
+                            .addOnCompleteListener(SignIn.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                        Toast.makeText(SignIn.this, "Login successful", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(SignIn.this, "Login failed", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
 
-                    startActivity(new Intent(SignIn.this, MainActivity.class));
-                    finish();
+                            });
                 }
 
             }

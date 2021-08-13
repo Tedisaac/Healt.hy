@@ -25,7 +25,7 @@
         android:layout_toRightOf="@+id/image_view"
         android:layout_marginLeft="30dp"
         android:layout_centerVertical="true"
-        android:text="hospital@gmail.com"
+        android:text="Ndei"
         android:textColor="@color/black"
         android:textSize="17sp"
         android:fontFamily="@font/poppins_medium"/>
