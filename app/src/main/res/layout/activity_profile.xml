@@ -4,8 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".ProfileActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/slightdarkblue"
+        android:src="@drawable/back"
+        android:id="@+id/back_fab_history"
+        android:elevation="1dp"
+        app:borderWidth="0dp" />
 
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/back_fab_history"
+            android:textSize="41sp"
+            android:fontFamily="@font/crazyxeon"
+            android:layout_marginLeft="150dp"
+            android:text="My History"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="30dp"
+        android:elevation="10dp"
+        android:id="@+id/rel_symptoms"
+        android:layout_gravity="center"
+        android:background="@drawable/delete_account_btn"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/check_sym"
+            android:text="@string/symptoms"
+            android:layout_toRightOf="@+id/symp_image"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins_regular"
+            android:maxLines="1"
+            android:textColor="#0B0A0A"
+            android:paddingLeft="17dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginRight="30dp"
+            android:textSize="15sp"
+            android:elevation="5dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/symp_image"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_history_24"
+            app:tint="#0C0B0B" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:elevation="10dp"
+        android:layout_below="@+id/rel_symptoms"
+        android:id="@+id/rel_cons"
+        android:layout_gravity="center"
+        android:background="@drawable/delete_account_btn"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/check_consults"
+            android:text="@string/consult"
+            android:layout_toRightOf="@+id/cons_image"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins_regular"
+            android:maxLines="1"
+            android:textColor="#0B0A0A"
+            android:paddingLeft="17dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_marginRight="30dp"
+            android:textSize="15sp"
+            android:elevation="5dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/cons_image"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_history_24"
+            app:tint="#0C0B0B" />
+    </RelativeLayout>
 
 </RelativeLayout>

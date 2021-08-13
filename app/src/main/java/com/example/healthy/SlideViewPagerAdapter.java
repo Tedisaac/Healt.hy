@@ -89,7 +89,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 ind3.setImageResource(R.drawable.unselected);
 
                 slider_login.setText("Login");
-                login_slider_text.setText("ribribrivbivr");
+                login_slider_text.setText("Easily Login");
                 previous_slide.setVisibility(View.GONE);
                 next_slide.setVisibility(View.VISIBLE);
                 break;
@@ -108,7 +108,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 ind3.setImageResource(R.drawable.unselected);
 
                 slider_login.setText("Meet A Doctor");
-                login_slider_text.setText("ribribrivbivr");
+                login_slider_text.setText("Get Connected to a doctor");
                 previous_slide.setVisibility(View.VISIBLE);
                 next_slide.setVisibility(View.VISIBLE);
                 break;
@@ -127,7 +127,7 @@ public class SlideViewPagerAdapter extends PagerAdapter {
                 ind3.setImageResource(R.drawable.selected);
 
                 slider_login.setText("Get Diagnosis");
-                login_slider_text.setText("ribribrivbivr");
+                login_slider_text.setText("Get sufficient diagnosis");
                 previous_slide.setVisibility(View.VISIBLE);
                 next_slide.setVisibility(View.GONE);
                 break;

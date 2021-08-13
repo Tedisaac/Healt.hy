@@ -1,5 +1,6 @@
 package com.example.healthy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,7 +18,11 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.regex.Pattern;
 
@@ -26,6 +31,8 @@ FloatingActionButton fab;
 EditText uname,email1,pass1,cpass;
 CheckBox checkBox;
 Button signup2;
+
+private FirebaseAuth firebaseAuth;
 
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile("^" +
@@ -43,6 +50,7 @@ Button signup2;
         setContentView(R.layout.activity_sign_up);
 
         //getSupportActionBar().hide();
+        firebaseAuth = FirebaseAuth.getInstance();
 
         fab = findViewById(R.id.back_fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -79,20 +87,32 @@ Button signup2;
                 String cpass_string = cpass.getText().toString().trim();
                 if (user_name.length() == 0) {
                     uname.setError("Input Field Required");
-                } else if (em1_string.length() == 0) {
+                } if (em1_string.length() == 0) {
                     email1.setError("Input Field Required");
-                }else if (!Patterns.EMAIL_ADDRESS.matcher(em1_string).matches()) {
+                } if (!Patterns.EMAIL_ADDRESS.matcher(em1_string).matches()) {
                     email1.setError("Input a valid email");
-                }else if (pass_string.length() == 0) {
+                } if (pass_string.length() == 0) {
                     pass1.setError("Input Field Required");
-                }else if (!PASSWORD_PATTERN.matcher(pass_string).matches()){
+                } if (!PASSWORD_PATTERN.matcher(pass_string).matches()){
                     pass1.setError("Password too weak");
-                } else if (cpass_string.length() == 0) {
+                } if (cpass_string.length() == 0) {
                     cpass.setError("Input Field Required");
-                } else if (!(pass_string == cpass_string)){
-                    cpass.setError("Passwords do not match");
-                } else {
-                    Toast.makeText(SignUp.this, "Successful", Toast.LENGTH_SHORT).show();
+                }
+                if (pass_string.equals(cpass_string)){
+                    firebaseAuth.createUserWithEmailAndPassword(em1_string, pass_string)
+                            .addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        startActivity(new Intent(getApplicationContext(),SignIn.class));
+                                        Toast.makeText(SignUp.this,"Registration successful",Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(SignUp.this,"Registration failed",Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                } else{
+                cpass.setError("Passwords do not match");
                 }
             }
         });
