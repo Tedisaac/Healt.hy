@@ -23,7 +23,7 @@ LottieAnimationView loadcircle;
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(LoadScreenActivity.this,ConversationActivity.class));
+                startActivity(new Intent(LoadScreenActivity.this,ConsultantActivity.class));
                 finish();
             }
         },3000);

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -36,6 +37,8 @@ public class SignIn extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
 
+    ProgressDialog signInDialog;
+
 
     @Override
     protected void onStart() {
@@ -46,6 +49,8 @@ public class SignIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+        signInDialog = new ProgressDialog(this);
 
         //getSupportActionBar().hide();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -89,15 +94,19 @@ public class SignIn extends AppCompatActivity {
                 }
                 if (!(email_string.isEmpty()) && !(password_string.isEmpty()))
                 {
+                    signInDialog.setMessage("Logging In...");
+                    signInDialog.show();
                     firebaseAuth.signInWithEmailAndPassword(email_string, password_string)
                             .addOnCompleteListener(SignIn.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        signInDialog.dismiss();
                                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                        finish();
                                         Toast.makeText(SignIn.this, "Login successful", Toast.LENGTH_SHORT).show();
                                     } else {
-                                        Toast.makeText(SignIn.this, "Login failed", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(SignIn.this, "Please check your internet connection", Toast.LENGTH_SHORT).show();
                                     }
                                 }
 
@@ -116,4 +125,9 @@ public class SignIn extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(SignIn.this, LoginActivity.class));
+        finish();
+    }
 }

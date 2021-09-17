@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/slightdarkblue"
-            android:src="@drawable/back"
+            android:src="@drawable/icons8_back"
             android:id="@+id/phone_fab"
             android:elevation="1dp"
             android:layout_marginLeft="18dp"
@@ -26,7 +26,7 @@
             android:layout_marginTop="30dp"
             app:lottie_rawRes="@raw/phonegif"
             android:elevation="10dp"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:id="@+id/phone_gif"/>
         <TextView
@@ -44,15 +44,15 @@
     </FrameLayout>
 
     <LinearLayout
-        android:layout_width="250dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:id="@+id/linear"
         android:layout_below="@id/otp_text"
         android:elevation="10dp"
         android:orientation="horizontal"
         android:gravity="center"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="80dp"
         android:background="@drawable/blue_border_rounded_cornwe"
         android:layout_marginRight="60dp">
         <TextView
@@ -89,22 +89,23 @@
         android:backgroundTint="@color/lightblue"
         android:background="@drawable/blue_border_rounded_cornwe"
         >
+
         <Button
+            android:id="@+id/phone_number_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/phone_number_btn"
-            android:text="@string/phone_txt"
-            android:textColor="@color/black"
+            android:layout_marginRight="30dp"
             android:layout_toRightOf="@+id/otp_icon"
             android:background="@android:color/transparent"
+            android:elevation="5dp"
             android:fontFamily="@font/poppins_regular"
             android:maxLines="1"
             android:paddingLeft="17dp"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
-            android:layout_marginRight="30dp"
-            android:textSize="15sp"
-            android:elevation="5dp"/>
+            android:text="@string/phone_txt"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"

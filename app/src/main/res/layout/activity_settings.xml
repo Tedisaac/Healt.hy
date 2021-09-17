@@ -8,6 +8,7 @@
     tools:context=".SettingsActivity">
 
     <RelativeLayout
+        android:id="@+id/rel_layout_back_fab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp">
@@ -15,90 +16,100 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:backgroundTint="@color/slightdarkblue"
-        android:src="@drawable/back"
+        android:src="@drawable/icons8_back"
         android:id="@+id/back_fab_settings"
         android:elevation="1dp"
         app:borderWidth="0dp"/>
 
-    <TextView
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        android:textColor="@color/black"
-        android:layout_toRightOf="@+id/back_fab_settings"
-        android:textSize="41sp"
-        android:fontFamily="@font/crazyxeon"
-        android:layout_marginLeft="186dp"
-        android:text="Settings"/>
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="167dp"
+            android:layout_toRightOf="@+id/back_fab_settings"
+            android:fontFamily="@font/crazyxeon"
+            android:text="Settings"
+            android:textColor="@color/black"
+            android:textSize="37sp" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="30dp"
-        android:elevation="10dp"
-        android:id="@+id/rel_profile"
-        android:layout_gravity="center"
-        android:background="@drawable/delete_account_btn"
-        >
-        <Button
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rel_layout_back_fab"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/change_username_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/change_profile"
-            android:text="@string/changep"
-            android:layout_toRightOf="@+id/prof_image"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/poppins_regular"
-            android:maxLines="1"
-            android:textColor="#0B0A0A"
-            android:paddingLeft="17dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:layout_marginRight="30dp"
-            android:textSize="15sp"
-            android:elevation="5dp"/>
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:id="@+id/prof_image"
-            android:layout_marginLeft="30dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_baseline_person_24"
-            app:tint="#0C0B0B" />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:elevation="10dp"
-        android:layout_below="@+id/rel_profile"
-        android:layout_gravity="center"
-        android:background="@drawable/delete_account_btn"
-        >
-        <Button
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/person_id"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="33dp"
+                android:src="@drawable/ic_baseline_person_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/person_id"
+                android:text="Change Username"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/change_password_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/delete_account"
-            android:text="@string/delete"
-            android:layout_toRightOf="@+id/del_image"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/poppins_regular"
-            android:maxLines="1"
-            android:textColor="#0E0C0C"
-            android:paddingLeft="17dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:layout_marginRight="30dp"
-            android:textSize="15sp"
-            android:elevation="5dp"/>
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:id="@+id/del_image"
-            android:layout_marginLeft="30dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_baseline_delete_24"
-            app:tint="#050505" />
-    </RelativeLayout>
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/security_id"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="33dp"
+                android:src="@drawable/ic_baseline_security_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/security_id"
+                android:text="Change Password"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/delete_account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id="@+id/delete_id"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="33dp"
+                android:src="@drawable/ic_baseline_delete_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/delete_id"
+                android:text="Delete Account"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
 </RelativeLayout>

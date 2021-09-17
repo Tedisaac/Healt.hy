@@ -3,10 +3,20 @@ package com.example.healthy;
 public class RespnseMessage {
     String textMessage;
     boolean isUser;
+    String time;
 
-    public RespnseMessage(String textMessage, boolean isUser) {
+    public RespnseMessage(String textMessage, boolean isUser, String time) {
         this.textMessage = textMessage;
         this.isUser = isUser;
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getTextMessage() {

@@ -6,12 +6,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/login_anim"
         app:lottie_rawRes="@raw/logg"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="105dp"/>
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -23,20 +23,22 @@
         android:textColor="@color/black"
         android:textSize="40sp"
         android:gravity="center"/>
+
     <ImageView
+        android:id="@+id/slider_next"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/slider_next"
-        android:background="@drawable/ic_next_slide"
+        android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"/>
+        android:background="@drawable/icons8_forward" />
+
     <ImageView
+        android:id="@+id/slider_previous"
         android:layout_width="50dp"
         android:layout_height="40dp"
-        android:id="@+id/slider_previous"
-        android:background="@drawable/ic_previous_slide"
+        android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"/>
+        android:background="@drawable/icons8_back" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,11 +58,12 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         >
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ind1"
-        android:background="@drawable/selected"/>
+
+        <ImageView
+            android:id="@+id/ind1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selected" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

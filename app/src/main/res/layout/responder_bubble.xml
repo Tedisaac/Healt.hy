@@ -12,6 +12,16 @@
         android:layout_margin="8dp"
         android:fontFamily="@font/poppins_medium"
         android:background="@drawable/user_bubble"
+        android:backgroundTint="@color/lightblue"
         android:text="hey world"/>
+    <TextView
+        android:id="@+id/current_responder_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:23"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/responder_message"
+        android:layout_marginLeft="23dp"
+        android:textSize="14sp"/>
 
 </RelativeLayout>

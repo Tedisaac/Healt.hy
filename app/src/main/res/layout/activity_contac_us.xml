@@ -15,21 +15,349 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:backgroundTint="@color/slightdarkblue"
-            android:src="@drawable/back"
+            android:src="@drawable/icons8_back"
             android:id="@+id/back_fab_medical"
             android:elevation="1dp"
             app:borderWidth="0dp"/>
 
         <TextView
-            android:layout_width="230dp"
+            android:layout_width="210dp"
             android:layout_height="60dp"
-            android:textColor="@color/black"
-            android:layout_toRightOf="@+id/back_fab_history"
-            android:textSize="41sp"
+            android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@+id/back_fab_medical"
             android:fontFamily="@font/crazyxeon"
-            android:layout_marginLeft="150dp"
-            android:text="Medical Profile"/>
+            android:text="Medical Profile"
+            android:textColor="@color/black"
+            android:textSize="37sp" />
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="110dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender :"
+                android:textColor="@color/black"
+                android:textSize="21sp" />
+            <TextView
+                android:id="@+id/gender_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blackolive"
+                android:text=""
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/radio_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BirthDate :"
+                    android:textColor="@color/black"
+                    android:textSize="21sp" />
+                <TextView
+                    android:id="@+id/birth_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blackolive"
+                    android:text=""
+                    android:textSize="18sp"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_toRightOf="@+id/date_icon"
+                    android:background="@android:color/transparent"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="Select Date"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/date_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/icons8event" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BloodGroup :"
+                    android:textColor="@color/black"
+                    android:textSize="21sp" />
+                <TextView
+                    android:id="@+id/blood_group_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blackolive"
+                    android:text=""
+                    android:textSize="18sp"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+
+                <EditText
+                    android:id="@+id/blood_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_toRightOf="@+id/blood_icon"
+                    android:background="@android:color/transparent"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Enter Blood Group"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/black"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/blood_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/icons8blood" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Height(inches) :"
+                    android:textColor="@color/black"
+                    android:textSize="21sp" />
+                <TextView
+                    android:id="@+id/height_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blackolive"
+                    android:text=""
+                    android:textSize="18sp"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+
+                <EditText
+                    android:id="@+id/height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_toRightOf="@+id/height_icon"
+                    android:background="@android:color/transparent"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Enter Height"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/black"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/height_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/icons8height" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight(kgs) :"
+                    android:textColor="@color/black"
+                    android:textSize="21sp" />
+                <TextView
+                    android:id="@+id/weight_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blackolive"
+                    android:text=""
+                    android:textSize="18sp"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+
+                <EditText
+                    android:id="@+id/weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_toRightOf="@+id/weight_icon"
+                    android:background="@android:color/transparent"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Enter Weight"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="@color/black"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/weight_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/icons8weight" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="62dp"
+            android:background="@drawable/blue_border_rounded_cornwe"
+            android:backgroundTint="@color/slightdarkblue">
+
+            <Button
+                android:id="@+id/add_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_toRightOf="@+id/add_icon"
+                android:background="@android:color/transparent"
+                android:elevation="5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:maxLines="1"
+                android:paddingLeft="17dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="ADD DETAILS"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/add_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/icons8add" />
+        </RelativeLayout>
+
+    </LinearLayout>
 </RelativeLayout>

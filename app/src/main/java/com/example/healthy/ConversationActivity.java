@@ -15,7 +15,11 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class ConversationActivity extends AppCompatActivity {
@@ -26,6 +30,8 @@ public class ConversationActivity extends AppCompatActivity {
     List<RespnseMessage> respnseMessages;
     ImageView sendImage;
     FloatingActionButton convo_back_fab;
+    final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+    String timeStamp = dateFormat.format(new Date());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,11 +60,12 @@ public class ConversationActivity extends AppCompatActivity {
         sendImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RespnseMessage message = new RespnseMessage(userinput.getText().toString(),true);
+                RespnseMessage message = new RespnseMessage(userinput.getText().toString(),true,timeStamp);
                 respnseMessages.add(message);
-                RespnseMessage message1 = new RespnseMessage(userinput.getText().toString(),false);
+                RespnseMessage message1 = new RespnseMessage(userinput.getText().toString(),false,"12:44");
                 respnseMessages.add(message1);
                 messageAdapter.notifyDataSetChanged();
+                userinput.getText().clear();
             }
         });
     }

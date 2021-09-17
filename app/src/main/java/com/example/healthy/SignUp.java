@@ -3,6 +3,7 @@ package com.example.healthy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation;
@@ -23,7 +24,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class SignUp extends AppCompatActivity {
@@ -32,7 +38,15 @@ EditText uname,email1,pass1,cpass;
 CheckBox checkBox;
 Button signup2;
 
+String user_name,em1_string,pass_string;
+
+ProgressDialog signUpDialog;
+
 private FirebaseAuth firebaseAuth;
+private FirebaseDatabase db = FirebaseDatabase.getInstance();
+private FirebaseUser firebaseUser;
+String userId;
+private DatabaseReference root = db.getReference().child("Users");
 
     private static final Pattern PASSWORD_PATTERN =
             Pattern.compile("^" +
@@ -48,6 +62,8 @@ private FirebaseAuth firebaseAuth;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        signUpDialog = new ProgressDialog(this);
 
         //getSupportActionBar().hide();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -81,9 +97,9 @@ private FirebaseAuth firebaseAuth;
         signup2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user_name = uname.getText().toString().trim();
-                String em1_string = email1.getText().toString().trim();
-                String pass_string = pass1.getText().toString().trim();
+                user_name = uname.getText().toString().trim();
+                em1_string = email1.getText().toString().trim();
+                pass_string = pass1.getText().toString().trim();
                 String cpass_string = cpass.getText().toString().trim();
                 if (user_name.length() == 0) {
                     uname.setError("Input Field Required");
@@ -99,15 +115,24 @@ private FirebaseAuth firebaseAuth;
                     cpass.setError("Input Field Required");
                 }
                 if (pass_string.equals(cpass_string)){
+                    signUpDialog.setMessage("Registering...");
+                    signUpDialog.show();
                     firebaseAuth.createUserWithEmailAndPassword(em1_string, pass_string)
                             .addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        signUpDialog.dismiss();
+                                        submitData();
                                         startActivity(new Intent(getApplicationContext(),SignIn.class));
+                                        finish();
                                         Toast.makeText(SignUp.this,"Registration successful",Toast.LENGTH_SHORT).show();
                                     } else {
-                                        Toast.makeText(SignUp.this,"Registration failed",Toast.LENGTH_SHORT).show();
+                                        if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                                            Toast.makeText(SignUp.this, "Account already Exists", Toast.LENGTH_SHORT).show();
+                                        } else{
+                                        Toast.makeText(SignUp.this,"Please check your internet connection",Toast.LENGTH_SHORT).show();
+                                        }
                                     }
                                 }
                             });
@@ -115,7 +140,23 @@ private FirebaseAuth firebaseAuth;
                 cpass.setError("Passwords do not match");
                 }
             }
+
+            private void submitData() {
+                firebaseUser = firebaseAuth.getCurrentUser();
+                userId = firebaseUser.getUid();
+                HashMap<String,String> userMap = new HashMap<>();
+                userMap.put("Username", user_name);
+                userMap.put("Email", em1_string);
+                userMap.put("Password", pass_string);
+                root.child("Patients").child(userId).setValue(userMap);
+            }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(SignUp.this, LoginActivity.class));
+        finish();
     }
 }

@@ -39,23 +39,23 @@
         android:padding="20dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/options"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/menu"
-            android:id="@+id/options"
             android:background="@drawable/gradient_background"
-            app:borderWidth="0dp"
-            android:elevation="5dp"/>
+            android:elevation="5dp"
+            android:src="@drawable/menu"
+            app:borderWidth="0dp" />
 
         <TextView
             android:layout_width="170dp"
             android:layout_height="60dp"
-            android:textColor="@color/black"
+            android:layout_marginLeft="150dp"
             android:layout_toRightOf="@+id/options"
-            android:textSize="41sp"
             android:fontFamily="@font/crazyxeon"
-            android:layout_marginLeft="202dp"
-            android:text="Healt.hy"/>
+            android:text="Healt.hy"
+            android:textColor="@color/black"
+            android:textSize="37sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -100,15 +100,14 @@
           android:layout_marginTop="10dp">
 
           <TextView
+              android:id="@+id/assist"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="How may I help you today today?"
-              android:textColor="@color/black"
-              android:textSize="22sp"
-              android:id="@+id/assist"
-              android:layout_marginBottom="20dp"
               android:layout_marginLeft="15dp"
-              />
+              android:layout_marginBottom="20dp"
+              android:text="How may I help you today?"
+              android:textColor="@color/black"
+              android:textSize="22sp" />
 
           <TextView
               android:layout_width="wrap_content"
@@ -125,7 +124,7 @@
               android:layout_height="wrap_content"
               android:layout_toRightOf="@+id/contact_gp"
               android:layout_marginLeft="10dp"
-              android:layout_marginTop="81dp"
+              android:layout_marginTop="82dp"
               android:src="@drawable/ic_baseline_arrow_right_24"/>
           <TextView
               android:layout_width="wrap_content"
@@ -137,14 +136,15 @@
               android:textColor="@color/darkblue"
               android:layout_marginLeft="50dp"
               android:id="@+id/contact_consultant"/>
+
           <ImageView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:outlineAmbientShadowColor="@color/black"
-              android:layout_marginTop="137dp"
-              android:layout_toRightOf="@+id/contact_consultant"
               android:layout_marginLeft="10dp"
-              android:src="@drawable/ic_baseline_arrow_right_24"/>
+              android:layout_marginTop="139dp"
+              android:layout_toRightOf="@+id/contact_consultant"
+              android:outlineAmbientShadowColor="@color/black"
+              android:src="@drawable/ic_baseline_arrow_right_24" />
 
 
       </RelativeLayout>
@@ -155,15 +155,60 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp">
-        <ScrollView
+        <!--<ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            
+
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/recycler_view"/>
-        </ScrollView>
+        </ScrollView>-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/facts_Cardview"
+                app:cardElevation="6dp">
+                <RelativeLayout
+                    android:id="@+id/background_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightblue"
+                    android:padding="5dp">
+
+
+                    <ImageView
+                        android:id="@+id/phone_image"
+                        android:layout_width="141dp"
+                        android:layout_height="252dp"
+                        android:src="@drawable/didyouknowremovebg" />
+
+                    <TextView
+                        android:id="@+id/facts_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="-6dp"
+                        android:layout_marginLeft="-6dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="24dp"
+                        android:gravity="center"
+                        android:textAlignment="textStart"
+                        android:layout_toRightOf="@+id/phone_image"
+                        android:text="COVID-19"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        tools:ignore="RtlCompat" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
 

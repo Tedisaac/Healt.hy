@@ -11,6 +11,8 @@
     <string name="otp_digits">Enter the OTP we sent you on the given number.</string>
     <string name="welcome">Welcome.</string>
     <string name="reg_txt">Register Here.</string>
+    <string name="pay">PAY</string>
+    <string name="cancel">CANCEL</string>
     <string name="email">Email</string>
     <string name="forgot_password">Forgot Password? No Worries.</string>
     <string name="password">Password</string>
@@ -28,4 +30,5 @@
     <string name="consult">Consultations</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="changepassword">UPDATE</string>
 </resources>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".VisaActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="320dp"
+        android:layout_height="450dp"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="15dp"
+        android:padding="10dp"
+        android:elevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PAY VIA CARD"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/pay"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter credit card details"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20dp"
+                />
+              <LinearLayout
+                android:layout_width="260dp"
+                android:layout_height="33dp"
+                android:background="@drawable/blue_border_rounded_cornwe"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:elevation="10dp"
+                android:layout_marginTop="15dp">
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="7dp"
+                   android:layout_marginTop="4dp"
+                   android:src="@drawable/iconscard"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:hint="Enter card number"
+                    android:id="@+id/card_num_edit_text"
+                    android:background="@android:color/transparent"/>
+              </LinearLayout>
+            <LinearLayout
+                android:layout_width="260dp"
+                android:layout_height="33dp"
+                android:background="@drawable/blue_border_rounded_cornwe"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:elevation="10dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/iconsuser"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:hint="Enter name"
+                    android:id="@+id/card_name_edit_text"
+                    android:background="@android:color/transparent"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="35dp"
+                android:orientation="horizontal"
+                android:elevation="10dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/blue_border_rounded_cornwe"
+                android:layout_marginTop="20dp">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Expiry (MM/YY)"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/transparent"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:orientation="horizontal"
+                android:elevation="10dp"
+                android:layout_marginLeft="37dp"
+                android:background="@drawable/blue_border_rounded_cornwe"
+                android:layout_marginTop="20dp">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="CVV"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/transparent"
+                    />
+            </LinearLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/lightblue"
+                android:background="@drawable/blue_border_rounded_cornwe"
+                >
+
+                <Button
+                    android:id="@+id/visa_pay_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_toRightOf="@+id/pay_icon"
+                    android:background="@android:color/transparent"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/pay"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/pay_icon"
+                    android:layout_marginLeft="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/iconscash"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/lightblue"
+                android:background="@drawable/blue_border_rounded_cornwe"
+                >
+
+                <Button
+                    android:id="@+id/cancel_visa_pay_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_toRightOf="@+id/cancel_visa_back_icon"
+                    android:background="@android:color/transparent"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/cancel"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/cancel_visa_back_icon"
+                    android:layout_marginLeft="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/iconsback"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

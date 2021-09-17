@@ -16,21 +16,21 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/back"
+            android:src="@drawable/icons8_back"
             android:id="@+id/convo_back"
             android:background="@drawable/gradient_background"
             app:borderWidth="0dp"
             android:elevation="5dp"/>
 
         <TextView
-            android:layout_width="170dp"
+            android:layout_width="150dp"
             android:layout_height="60dp"
-            android:textColor="@color/black"
-            android:layout_toRightOf="@+id/options"
-            android:textSize="41sp"
+            android:layout_marginLeft="130dp"
+            android:layout_toRightOf="@+id/convo_back"
             android:fontFamily="@font/crazyxeon"
-            android:layout_marginLeft="250dp"
-            android:text="Healt.hy"/>
+            android:text="Healt.hy"
+            android:textColor="@color/black"
+            android:textSize="41sp" />
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -42,29 +42,30 @@
         android:id="@+id/conversation"/>
 
     <EditText
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
         android:id="@+id/userInput"
-        android:imeOptions="actionSend"
-        android:imeActionId="4"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_edittext"
-        android:hint="Enter Message Here"
-        android:layout_marginBottom="10dp"
-        android:elevation="3dp"
         android:layout_marginLeft="10dp"
-        android:padding="8dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_edittext"
+        android:elevation="3dp"
         android:fontFamily="@font/poppins_medium"
-        android:textSize="22sp"
-        android:textColorHint="@color/grey"/>
+        android:hint="Enter Message Here"
+        android:imeActionId="4"
+        android:imeOptions="actionSend"
+        android:padding="8dp"
+        android:textColorHint="@color/grey"
+        android:textSize="22sp" />
 
     <ImageView
-        android:layout_width="179dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
         android:id="@+id/sendMessage"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:elevation="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         android:layout_toRightOf="@+id/userInput"
-        android:src="@drawable/send"
-        android:layout_alignParentBottom="true"/>
+        android:src="@drawable/send" />
 </RelativeLayout>

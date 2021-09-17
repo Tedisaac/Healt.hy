@@ -43,4 +43,10 @@ FloatingActionButton profile_back;
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(ChangeProfileActivity.this,SettingsActivity.class));
+        finish();
+    }
 }

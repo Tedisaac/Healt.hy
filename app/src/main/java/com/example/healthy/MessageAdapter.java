@@ -13,11 +13,12 @@ import java.util.List;
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomViewHolder> {
 
     class CustomViewHolder extends RecyclerView.ViewHolder{
-
         TextView textView;
+        TextView time;
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.user_message);
+            time = itemView.findViewById(R.id.current_time);
         }
     }
 
@@ -45,6 +46,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomVi
     public void onBindViewHolder(@NonNull MessageAdapter.CustomViewHolder holder, int position) {
 
         holder.textView.setText(respnseMessages.get(position).getTextMessage());
+        holder.time.setText(respnseMessages.get(position).getTime());
     }
 
     @Override

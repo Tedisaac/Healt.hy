@@ -19,7 +19,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/slightdarkblue"
-                android:src="@drawable/back"
+                android:src="@drawable/icons8_back"
                 android:id="@+id/back_fab"
                 android:elevation="1dp"
                 android:layout_marginLeft="18dp"
@@ -52,24 +52,25 @@
             android:layout_gravity="center"
             android:background="@drawable/blue_border_rounded_cornwe"
             >
+
             <EditText
+                android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/username"
-                android:hint="@string/uname"
-                android:textColorHint="@color/black"
-                android:inputType="text"
+                android:layout_marginRight="30dp"
                 android:layout_toRightOf="@+id/user_icon"
                 android:background="@android:color/transparent"
+                android:elevation="5dp"
                 android:fontFamily="@font/poppins_regular"
+                android:hint="@string/uname"
+                android:inputType="text"
                 android:maxLines="1"
                 android:paddingLeft="17dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
-                android:layout_marginRight="30dp"
+                android:textColorHint="@color/black"
                 android:textCursorDrawable="@drawable/cursor_color"
-                android:textSize="15sp"
-                android:elevation="5dp"/>
+                android:textSize="15sp" />
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
